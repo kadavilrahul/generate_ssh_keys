@@ -1,6 +1,6 @@
 #!/bin/bash
 # ssh-setup.sh
-# Purpose: Configure SSH access for both root and regular user on a Linux system
+# Purpose: Configure SSH access for both root and regular user to another regular user or root user
 # Usage: ./ssh-setup.sh <username> <public_key_file>
 
 # Check if script is run with sudo/root privileges
