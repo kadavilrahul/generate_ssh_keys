@@ -7,11 +7,10 @@ This will generate two files:
 ~/.ssh/id_rsa: The private key (keep this secure and do not share it).
 ~/.ssh/id_rsa.pub: The public key (this will be shared with the server).
 
-
 2. Remove any outdated or offending host key if present from your known_hosts file If error comes ERROR: It is also possible that a host key has just been changed.
 ssh-keygen -f "/home/rahuldineshk/.ssh/known_hosts" -R "IP of the machine you want to connect to"
 
-3. Try connecting to server with password
+3. Try connecting to the remote server with password
 ssh root@server_ip
 enter password
 exit
