@@ -7,12 +7,12 @@ What is SSH?
 SSH (Secure Shell) is a secure way to connect to and manage your Linux server remotely. Instead of sitting physically at your server, you can connect to it from your local computer.
 
 #### Prerequisites
-A Linux server (Ubuntu, Debian, CentOS, etc.)
-Basic knowledge of terminal commands
-Root or sudo access on your server
-SSH client on your local computer
-Windows: Use PuTTY or Windows Terminal
-Mac/Linux: Built-in terminal
+- A Linux server (Ubuntu, Debian, CentOS, etc.)
+- Basic knowledge of terminal commands
+- Root or sudo access on your server
+- SSH client on your local computer
+- Windows: Use PuTTY or Windows Terminal
+- Mac/Linux: Built-in terminal
 
 ## Clone the repository
 
@@ -62,7 +62,7 @@ ssh your_username@localhost
 
 
 ---------------------------------------------------------------------------------------------------------
-
+# THIS SECTION IS TO BE UPDATED
 
 
 
