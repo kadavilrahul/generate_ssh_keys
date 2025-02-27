@@ -57,7 +57,7 @@ su - root
 ssh your_username@localhost
 ```
 
-## Use this if you want a root user to be able to SSH into the regular user on the same machine.
+## Use this if you want a root user to be able to SSH into the root user on a different machine.
 
 ### 1. Login to the root user you want to connect from
 
