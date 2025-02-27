@@ -14,18 +14,20 @@ SSH client on your local computer
 Windows: Use PuTTY or Windows Terminal
 Mac/Linux: Built-in terminal
 
-## Use this if you want a regular user to be able to SSH into the root account on the same machine.
-
-### 1. Login to the user you want to connect from and get the Script
+## CLone the repository
 
 ```bash
 git clone https://github.com/kadavilrahul/generate_ssh_keys.git
 ```
 
+## Use this if you want a regular user to be able to SSH into the root account on the same machine.
+
+### 1. Login to the user you want to connect from
+
 ### 2. Run the Script
 
 ```bash
-bash sudo ssh-user-to-root.sh your-username
+sudo bash ssh-user-to-root.sh
 ```
 
 ### 3. Test the Setup
@@ -38,7 +40,46 @@ su - your-username
 ssh root@localhost
 ```
 
-#### Connecting from Your Computer to Server
+## Use this if you want a root user to be able to SSH into the regular user on the same machine.
+
+### 1. Login to the root user you want to connect from
+
+### 2. Run the Script
+```bash
+sudo bash ssh-root-to-user.sh your_username
+```
+
+### 2. Test the Setup
+
+```bash
+# Switch to your root user
+su - root
+
+# Try connecting to root
+ssh your_username@localhost
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Connecting from Your local Computer to Server
 1. On Your Local Computer
 - Generate an SSH key pair:
 
@@ -52,11 +93,6 @@ ssh-keygen -t rsa -b 4096
 ```
 Just press Enter for all prompts to use default settings.
 
-2. Copy the Script to Your Server
-Download the script
-```
-wget https://raw.githubusercontent.com/kadavilrahul/generate_ssh_keys/main/ssh-setup.sh
-```
 
 3. Copy Your Public Key to Server
 Windows
@@ -76,7 +112,6 @@ sudo ./ssh-setup.sh your-username /tmp/id_rsa.pub
 ```
 ssh username@server-ip
 ```
-Step-by-Step Guide: Setting Up User-to-Root Access
 
 
 
