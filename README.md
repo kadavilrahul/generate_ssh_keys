@@ -3,14 +3,8 @@ Here's the corrected README with the proper repository URL:
 # Linux SSH Setup Guide for Beginners
 
 This guide helps you set up SSH (Secure Shell) access on your Linux server. It includes two scripts that automate the setup process, making it easier for beginners to configure SSH securely.
-
 What is SSH?
-
 SSH (Secure Shell) is a secure way to connect to and manage your Linux server remotely. Instead of sitting physically at your server, you can connect to it from your local computer.
-
-#### Which Script Should I Use?
-1. ssh-setup.sh: Use this if you want to connect from your Windows/Mac/Linux computer to your Linux server
-2. ssh-user-to-root.sh: Use this if you're already on your Linux server and want to set up SSH access between a regular user and the root user
 
 #### Prerequisites
 A Linux server (Ubuntu, Debian, CentOS, etc.)
@@ -19,6 +13,30 @@ Root or sudo access on your server
 SSH client on your local computer
 Windows: Use PuTTY or Windows Terminal
 Mac/Linux: Built-in terminal
+
+## Use this if you want a regular user to be able to SSH into the root account on the same machine.
+
+### 1. Login to the user you want to connect from and get the Script
+
+```bash
+git clone https://github.com/kadavilrahul/generate_ssh_keys.git
+```
+
+### 2. Run the Script
+
+```bash
+bash sudo ssh-user-to-root.sh your-username
+```
+
+### 3. Test the Setup
+
+```bash
+# Switch to your regular user
+su - your-username
+
+# Try connecting to root
+ssh root@localhost
+```
 
 #### Connecting from Your Computer to Server
 1. On Your Local Computer
@@ -60,29 +78,7 @@ ssh username@server-ip
 ```
 Step-by-Step Guide: Setting Up User-to-Root Access
 
-## Use this if you want a regular user to be able to SSH into the root account on the same machine.
 
-### 1. Get the Script
-
-```bash
-wget https://raw.githubusercontent.com/yourusername/repo/main/ssh-user-to-root.sh
-```
-
-### 2. Run the Script
-
-```bash
-bash ssh-user-to-root.sh your-username
-```
-
-### 3. Test the Setup
-
-```bash
-# Switch to your regular user
-su - your-username
-
-# Try connecting to root
-ssh root@localhost
-```
 
 ## Common Issues and Solutions
 
