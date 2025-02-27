@@ -1,12 +1,11 @@
 #!/bin/bash
 # ssh-user-to-root.sh
-# Purpose: Configure SSH access from a non-root user to root user
-# Usage: ./ssh-user-to-root.sh <username>
+# Purpose: Configure SSH access from the currently logged-in non-root user to root user
+# Usage: sudo ./ssh-user-to-root.sh
 
 # Function to display script usage
 show_usage() {
-    echo "Usage: $0 <username>"
-    echo "Example: $0 myuser"
+    echo "Usage: sudo $0"
     echo "Note: Run this script as root or with sudo"
 }
 
@@ -16,13 +15,14 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 
-# Check if username is provided
-if [ "$#" -ne 1 ]; then
-    show_usage
+# Automatically detect the username of the user who invoked sudo
+USERNAME=$(logname 2>/dev/null)
+
+# Validate that a username was detected
+if [ -z "$USERNAME" ]; then
+    echo "Error: Could not detect the username. Are you logged in as a non-root user?"
     exit 1
 fi
-
-USERNAME=$1
 
 # Validate username exists
 if ! id "$USERNAME" >/dev/null 2>&1; then
@@ -46,7 +46,6 @@ setup_ssh_directory() {
 # Function to clean existing SSH keys
 clean_existing_keys() {
     local user_home=$1
-    local username=$2
     
     echo "Cleaning existing SSH keys..."
     
@@ -80,7 +79,6 @@ generate_ssh_keys() {
 # Function to configure root SSH access
 configure_root_access() {
     local user_home=$1
-    local username=$2
     
     echo "Configuring root SSH access..."
     
@@ -101,13 +99,13 @@ setup_ssh_directory "$USERNAME" "$USER_HOME"
 setup_ssh_directory "root" "/root"
 
 # Clean existing keys if present
-clean_existing_keys "$USER_HOME" "$USERNAME"
+clean_existing_keys "$USER_HOME"
 
 # Generate new SSH keys
 generate_ssh_keys "$USER_HOME" "$USERNAME"
 
 # Configure root access
-configure_root_access "$USER_HOME" "$USERNAME"
+configure_root_access "$USER_HOME"
 
 # Final instructions
 echo -e "\nSetup Complete! Please follow these steps to test:"
