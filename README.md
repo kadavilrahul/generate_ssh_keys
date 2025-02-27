@@ -63,28 +63,37 @@ ssh your_username@localhost
 ## Use this if you want a windows user to be able to SSH into the Linux machine.
 
 Open a terminal on the client machine (the machine you want to connect from).
-1. ssh-keygen -t rsa -b 4096
-
+```
+ssh-keygen -t rsa -b 4096
+```
 This will generate two files:
 ~/.ssh/id_rsa: The private key (keep this secure and do not share it).
 ~/.ssh/id_rsa.pub: The public key (this will be shared with the server).
 
 2. Remove any outdated or offending host key if present from your known_hosts file If error comes ERROR: It is also possible that a host key has just been changed.
+```
 ssh-keygen -f "/home/rahuldineshk/.ssh/known_hosts" -R "IP of the machine you want to connect to"
+```
 
-3. Try connecting to the remote server with password. This is for test only.
+4. Try connecting to the remote server with password. This is for test only.
+```
 ssh root@server_ip
-enter password
+```
+Enter password when prmpted
+```
 exit
-
-4. Copy the public key to the server (the machine you want to connect to):
+``
+6. Copy the public key to the server (the machine you want to connect to):
+```
 ssh-copy-id username@server_ip
-enter password
+```
+Enter password when prompted
 
-5. Try connecting to th server without password
+7. Try connecting to th server without password
+```
 ssh root@server_ip
-
-
+```
+-----------------------------------------------------------------------------------------------------
 ## Common Issues and Solutions
 
 ### "Permission denied" Error
