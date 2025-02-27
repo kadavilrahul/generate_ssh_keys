@@ -62,7 +62,7 @@ ssh your_username@localhost
 
 ## Use this if you want a windows user or mac user to be able to SSH into the Linux machine.
 
-Open a terminal on the client machine (the machine you want to connect from).
+1. Open a terminal on the client machine (the machine you want to connect from).
 ```
 ssh-keygen -t rsa -b 4096
 ```
