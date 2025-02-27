@@ -60,7 +60,7 @@ ssh your_username@localhost
 ```
 
 
-## Use this if you want a windows user to be able to SSH into the Linux machine.
+## Use this if you want a windows user or mac user to be able to SSH into the Linux machine.
 
 Open a terminal on the client machine (the machine you want to connect from).
 ```
@@ -82,7 +82,7 @@ ssh root@server_ip
 Enter password when prmpted
 ```
 exit
-``
+```
 6. Copy the public key to the server (the machine you want to connect to):
 ```
 ssh-copy-id username@server_ip
