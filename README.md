@@ -60,59 +60,29 @@ ssh your_username@localhost
 ```
 
 
+## Use this if you want a windows user to be able to SSH into the Linux machine.
 
----------------------------------------------------------------------------------------------------------
-# THIS SECTION IS TO BE UPDATED
+Open a terminal on the client machine (the machine you want to connect from).
+1. ssh-keygen -t rsa -b 4096
 
+This will generate two files:
+~/.ssh/id_rsa: The private key (keep this secure and do not share it).
+~/.ssh/id_rsa.pub: The public key (this will be shared with the server).
 
+2. Remove any outdated or offending host key if present from your known_hosts file If error comes ERROR: It is also possible that a host key has just been changed.
+ssh-keygen -f "/home/rahuldineshk/.ssh/known_hosts" -R "IP of the machine you want to connect to"
 
+3. Try connecting to the remote server with password. This is for test only.
+ssh root@server_ip
+enter password
+exit
 
+4. Copy the public key to the server (the machine you want to connect to):
+ssh-copy-id username@server_ip
+enter password
 
-
-
-
-
-
-
-
-
-
-
-
-#### Connecting from Your local Computer to Server
-1. On Your Local Computer
-- Generate an SSH key pair:
-
-Windows (in PowerShell or Windows Terminal)
-```
-ssh-keygen -t rsa -b 4096
-```
-Mac/Linux
-```
-ssh-keygen -t rsa -b 4096
-```
-Just press Enter for all prompts to use default settings.
-
-
-3. Copy Your Public Key to Server
-Windows
-```
-scp C:\Users\YourUsername\.ssh\id_rsa.pub username@server-ip:/tmp/
-```
-Mac/Linux
-```
-scp ~/.ssh/id_rsa.pub username@server-ip:/tmp/
-```
-4. Run the Setup Script
-```
-sudo ./ssh-setup.sh your-username /tmp/id_rsa.pub
-```
-6. Test Connection
-
-```
-ssh username@server-ip
-```
-
+5. Try connecting to th server without password
+ssh root@server_ip
 
 
 ## Common Issues and Solutions
