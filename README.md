@@ -57,6 +57,25 @@ su - root
 ssh your_username@localhost
 ```
 
+## Use this if you want a root user to be able to SSH into the regular user on the same machine.
+
+### 1. Login to the root user you want to connect from
+
+### 2. Run the Script
+
+```bash
+bash ssh-root-root-another-server.sh <destination_server_ip>
+```
+
+### 2. Test the Setup
+
+```bash
+# Switch to your root user
+su - root
+
+# Try connecting to root
+ssh your_username@localhost
+```
 
 ## Use this if you want a windows user or mac user to be able to SSH into the Linux machine.
 
