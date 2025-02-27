@@ -1,5 +1,3 @@
-Here's the corrected README with the proper repository URL:
-
 # Linux SSH Setup Guide for Beginners
 
 This guide helps you set up SSH (Secure Shell) access on your Linux server. It includes two scripts that automate the setup process, making it easier for beginners to configure SSH securely.
