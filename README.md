@@ -12,23 +12,35 @@ SSH (Secure Shell) is a secure way to connect to and manage your Linux server re
 - Windows: Use PuTTY or Windows Terminal
 - Mac/Linux: Built-in terminal
 
-## Clone the repository
+#
+### Install SSH server
+apt update
+apt install -y openssh-server
+
+### Start and enable the SSH service
+systemctl start ssh
+systemctl enable ssh
+
+### Verify it's running
+systemctl status ssh
+
+### Clone the repository
 
 ```bash
 git clone https://github.com/kadavilrahul/generate_ssh_keys.git
 ```
 
-## Use this if you want a regular user to be able to SSH into the root account on the same machine.
+### Use this if you want a regular user to be able to SSH into the root account on the same machine.
 
-### 1. Login to the user you want to connect from
+#### 1. Login to the user you want to connect from
 
-### 2. Run the Script
+#### 2. Run the Script
 
 ```bash
 sudo bash ssh-user-to-root.sh
 ```
 
-### 3. Test the Setup
+#### 3. Test the Setup
 
 ```bash
 # Switch to your regular user
@@ -38,16 +50,16 @@ su - your-username
 ssh root@localhost
 ```
 
-## Use this if you want a root user to be able to SSH into the regular user on the same machine.
+### Use this if you want a root user to be able to SSH into the regular user on the same machine.
 
-### 1. Login to the root user you want to connect from
+#### 1. Login to the root user you want to connect from
 
-### 2. Run the Script
+#### 2. Run the Script
 ```bash
 sudo bash ssh-root-to-user.sh your_username
 ```
 
-### 2. Test the Setup
+#### 2. Test the Setup
 
 ```bash
 # Switch to your root user
@@ -57,17 +69,17 @@ su - root
 ssh your_username@localhost
 ```
 
-## Use this if you want a root user to be able to SSH into the root user on a different machine.
+### Use this if you want a root user to be able to SSH into the root user on a different machine.
 
-### 1. Login to the root user you want to connect from
+#### 1. Login to the root user you want to connect from
 
-### 2. Run the Script
+#### 2. Run the Script
 
 ```bash
 bash ssh-root-root-another-server.sh <destination_server_ip>
 ```
 
-### 2. Test the Setup
+#### 2. Test the Setup
 
 ```bash
 # Switch to your root user
@@ -77,7 +89,7 @@ su - root
 ssh your_username@localhost
 ```
 
-## Use this if you want a windows user or mac user to be able to SSH into the Linux machine.
+### Use this if you want a windows user or mac user to be able to SSH into the Linux machine.
 
 1. Open a terminal on the client machine (the machine you want to connect from).
 ```
@@ -128,7 +140,7 @@ connect-your_username
 ```
 
 -----------------------------------------------------------------------------------------------------
-## Common Issues and Solutions
+### Common Issues and Solutions
 
 ### "Permission denied" Error
 - Make sure you're using the correct username
