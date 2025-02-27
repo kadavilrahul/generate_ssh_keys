@@ -8,11 +8,11 @@ What is SSH?
 
 SSH (Secure Shell) is a secure way to connect to and manage your Linux server remotely. Instead of sitting physically at your server, you can connect to it from your local computer.
 
-## Which Script Should I Use?
+#### Which Script Should I Use?
 1. ssh-setup.sh: Use this if you want to connect from your Windows/Mac/Linux computer to your Linux server
 2. ssh-user-to-root.sh: Use this if you're already on your Linux server and want to set up SSH access between a regular user and the root user
 
-## Prerequisites
+#### Prerequisites
 A Linux server (Ubuntu, Debian, CentOS, etc.)
 Basic knowledge of terminal commands
 Root or sudo access on your server
@@ -20,36 +20,32 @@ SSH client on your local computer
 Windows: Use PuTTY or Windows Terminal
 Mac/Linux: Built-in terminal
 
-## Connecting from Your Computer to Server
+#### Connecting from Your Computer to Server
 1. On Your Local Computer
 - Generate an SSH key pair:
 
-# Windows (in PowerShell or Windows Terminal)
+Windows (in PowerShell or Windows Terminal)
 ```
 ssh-keygen -t rsa -b 4096
 ```
-# Mac/Linux
+Mac/Linux
 ```
 ssh-keygen -t rsa -b 4096
 ```
-
 Just press Enter for all prompts to use default settings.
 
 2. Copy the Script to Your Server
-# Download the script
+Download the script
 ```
 wget https://raw.githubusercontent.com/kadavilrahul/generate_ssh_keys/main/ssh-setup.sh
 ```
-# Make it executable
-```
-chmod +x ssh-setup.sh
-```
+
 3. Copy Your Public Key to Server
-# Windows
+Windows
 ```
 scp C:\Users\YourUsername\.ssh\id_rsa.pub username@server-ip:/tmp/
 ```
-# Mac/Linux
+Mac/Linux
 ```
 scp ~/.ssh/id_rsa.pub username@server-ip:/tmp/
 ```
