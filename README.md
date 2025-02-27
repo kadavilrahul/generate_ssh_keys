@@ -12,7 +12,8 @@ SSH (Secure Shell) is a secure way to connect to and manage your Linux server re
 - Windows: Use PuTTY or Windows Terminal
 - Mac/Linux: Built-in terminal
 
-#
+# INSTALLATION:
+
 ### Install SSH server
 apt update
 apt install -y openssh-server
