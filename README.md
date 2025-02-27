@@ -79,7 +79,7 @@ ssh-keygen -f "/home/rahuldineshk/.ssh/known_hosts" -R "IP of the machine you wa
 ```
 ssh root@server_ip
 ```
-Enter password when prmpted
+Enter password when prompted
 ```
 exit
 ```
