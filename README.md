@@ -15,15 +15,26 @@ SSH (Secure Shell) is a secure way to connect to and manage your Linux server re
 # INSTALLATION:
 
 ### Install SSH server
+
+```bash
 apt update
+```
+```bash
 apt install -y openssh-server
+```
 
 ### Start and enable the SSH service
+```bash
 systemctl start ssh
+```
+```bash
 systemctl enable ssh
+```
 
 ### Verify it's running
+```bash
 systemctl status ssh
+```
 
 ### Clone the repository
 
