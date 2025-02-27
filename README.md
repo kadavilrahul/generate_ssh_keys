@@ -105,12 +105,7 @@ function connect-your_username {
 }
 ```
 
-9. Run this command or it will be run at powershell startup
-```
-. $PROFILE
-```
-
-10. Call function to run the command
+9. Call function to run the command
 ```
 connect-your_username
 ```
