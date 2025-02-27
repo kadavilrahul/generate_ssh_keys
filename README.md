@@ -93,6 +93,28 @@ Enter password when prompted
 ```
 ssh root@server_ip
 ```
+8. Setting Up Your Profile for Enhanced History (Windows)
+Open your profile on powershell
+```
+notepad $PROFILE
+```
+Add following line
+```
+function connect-your_username {
+    ssh your_username@your_ip_address
+}
+```
+
+9. Run this command or it will be run at powershell startup
+```
+. $PROFILE
+```
+
+10. Call function to run the command
+```
+connect-your_username
+```
+
 -----------------------------------------------------------------------------------------------------
 ## Common Issues and Solutions
 
