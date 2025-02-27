@@ -14,7 +14,7 @@ SSH client on your local computer
 Windows: Use PuTTY or Windows Terminal
 Mac/Linux: Built-in terminal
 
-## CLone the repository
+## Clone the repository
 
 ```bash
 git clone https://github.com/kadavilrahul/generate_ssh_keys.git
@@ -61,7 +61,7 @@ ssh your_username@localhost
 
 
 
-
+---------------------------------------------------------------------------------------------------------
 
 
 
