@@ -159,7 +159,7 @@ ssh-keygen -f "/home/username/.ssh/known_hosts" -R "IP of the machine you want t
 
 4. Try connecting to the remote server with password. This is for test only.
 ```
-ssh root@server_ip
+ssh username@server_ip
 ```
 Enter password when prompted
 ```
@@ -167,13 +167,14 @@ exit
 ```
 6. Copy the public key to the server (the machine you want to connect to):
 ```
-ssh-copy-id username@server_ip
+type $env:USERPROFILE\.ssh\id_rsa.pub | ssh username@server_ip "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+
 ```
 Enter password when prompted
 
 7. Try connecting to th server without password
 ```
-ssh root@server_ip
+ssh username@server_ip
 ```
 8. Setting Up Your Profile for Enhanced History (Windows)
 Open your profile on powershell
