@@ -140,7 +140,7 @@ su - your_username
 
 # Try connecting to root
 ssh your_username@<destination_server_ip>
-
+```
 
 ### Use this if you want a windows user or mac user to be able to SSH into the Linux machine.
 
