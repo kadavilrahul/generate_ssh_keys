@@ -154,7 +154,7 @@ This will generate two files:
 
 2. Remove any outdated or offending host key if present from your known_hosts file If error comes ERROR: It is also possible that a host key has just been changed.
 ```
-ssh-keygen -f "/home/rahuldineshk/.ssh/known_hosts" -R "IP of the machine you want to connect to"
+ssh-keygen -f "/home/username/.ssh/known_hosts" -R "IP of the machine you want to connect to"
 ```
 
 4. Try connecting to the remote server with password. This is for test only.
