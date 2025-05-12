@@ -39,7 +39,7 @@ systemctl status ssh
 ### Clone the repository
 
 ```bash
-git clone https://github.com/kadavilrahul/generate_ssh_keys.git
+git clone https://github.com/kadavilrahul/generate_ssh_keys.git && cd generate_ssh_keys
 ```
 
 ### Use this if you want a regular user to be able to SSH into the root account on the same machine.
