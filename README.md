@@ -121,7 +121,6 @@ su - your_username
 ssh root@<destination_server_ip>
 ```
 
-
 ### Use this if you want a user to be able to SSH into the user on a different machine.
 
 #### 1. Login to the user you want to connect from
@@ -154,7 +153,7 @@ This will generate two files:
 
 2. Remove any outdated or offending host key if present from your known_hosts file If error comes ERROR: It is also possible that a host key has just been changed.
 ```
-ssh-keygen -f "/home/username/.ssh/known_hosts" -R "IP of the machine you want to connect to"
+ssh-keygen -f "C:\Users\username\.ssh\known_hosts" -R "IP of the machine you want to connect to"
 ```
 
 4. Try connecting to the remote server with password. This is for test only.
