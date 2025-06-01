@@ -171,7 +171,7 @@ type $env:USERPROFILE\.ssh\id_rsa.pub | ssh username@server_ip "mkdir -p ~/.ssh 
 ```
 Enter password when prompted
 
-7. Try connecting to th server without password
+7. Try connecting to the server without password. You should be able to login without password.
 ```
 ssh username@server_ip
 ```
